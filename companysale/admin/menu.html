@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../css/manage.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="head">企业销售管理系统</div>
+<form action="partsale.php" method="post">
+<div id="menu" >
+<a href="manage.php" id="one">商品管理>></a><br>
+<a href="addgoods.php">添加商品>></a><br>
+
+
+
+<div id="main1" style="color:#08c;height: 40px;width: 165px;border:1px solid #c0bcbc;text-align: center;font-size: 15px;line-height: 60px;" 
+onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" >
+    人员管理>></div>
+    <div id="child1" style="display:none">
+<a href="usermanage.php" style="color: orange;">用户管理</a><br>
+<a href="employeemanage.php" style="color: orange;">员工管理</a>
+<a href="addemp.php" style="color: orange;">新增员工</a>
+</div>
+
+
+<a href="lookuporders.php">查询订单>></a><br>
+<div id="main2" style="color:#08c;height: 40px;width: 165px;border:1px solid #c0bcbc;text-align: center;font-size: 15px;line-height: 60px;" 
+onclick="document.all.child2.style.display=(document.all.child2.style.display =='none')?'':'none'" >
+    客户情况>></div>
+    <div id="child2" style="display:none">
+<a href="lookupusersale.php" style="color: orange;">客户购买情况</a><br>
+<a href="usertotalcount.php" style="color: orange;">客户总购买情况</a>
+</div>
+<a href="employeesale.php">员工销售情况>></a><br>
+<a href="allsale.php">销售总报表>></a><br>
+<label>输入年份和月份查询报表</label><br>
+<input type="text" name="year" value="2021" /><br><br>
+<input  type="text" name="month" value="12"/><br><br>
+<button type="submit" value="搜索">搜索</button><br>
+<a href="echarts.php">销售情况可视化>></a><br>
+<a href="../logout.php?action=logout">退出登录>></a>
+</div>
+</form>
+</body>
+</html>

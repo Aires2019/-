@@ -1,0 +1,243 @@
+-- ----------------------------
+-- Table structure for admins
+-- ----------------------------
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE `admins`  (
+  `account` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '管理员用户名',
+  `password` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '管理员密码',
+  PRIMARY KEY (`account`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+-- ----------------------------
+-- Records of admins
+-- ----------------------------
+INSERT INTO `admins` VALUES ('test', '123456');
+INSERT INTO `admins` VALUES ('tsy', 'tsy');
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `userid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `usertype` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `tel` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `addr` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ps` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin,
+  PRIMARY KEY (`userid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+-- ----------------------------
+-- Table structure for employees
+-- ----------------------------
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees`  (
+  `employeeid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `employeename` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `sex` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `tel` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `addr` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `empdate` DATE NOT NULL,
+  PRIMARY KEY (`employeeid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of employees
+-- ----------------------------
+INSERT INTO `employees` VALUES (1, '哈哈', 'haha', '女', '13200000000', '甘肃兰州','2021-01-01');
+INSERT INTO `employees` VALUES (2, '嗯哼', 'enheng', '女', '18600000000', '北京石景山','2021-01-01');
+INSERT INTO `employees` VALUES (3, '略略', 'luelue', '女', '15200000000', '辽宁沈阳','2021-01-01');
+
+-- ----------------------------
+-- Table structure for storage
+-- ----------------------------
+DROP TABLE IF EXISTS `storage`;
+CREATE TABLE `storage`  (
+  `storageid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '存储ID',
+  `productid` varchar(20) NOT NULL UNIQUE COMMENT '产品ID',
+  `productname` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `warehouseid` int(20) NOT NULL,
+  `price` float(10, 2) NOT NULL,
+  `number` int(11) NOT NULL,
+  `prdate` date NOT NULL,
+  `pic` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`storageid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of storage
+-- ----------------------------
+INSERT INTO `storage` VALUES (1, 202001001, '高端办公桌', 1, 10709.1, 50,'2020-06-01','1.jpg');
+INSERT INTO `storage` VALUES (2, 202001002, '便携式折叠桌', 1, 43, 99,'2020-07-01','2.jpg');
+INSERT INTO `storage` VALUES (3, 202001003, '可移动懒人桌', 1, 1880, 69,'2020-07-01','3.jpg');
+INSERT INTO `storage` VALUES (4,202001004, '大理石餐桌', 1, 1, 1125，200,'2020-09-01','4.jpg');
+INSERT INTO `storage` VALUES (5, 202001005, '儿童书桌', 1, 510, 200,'2020-08-01','5.jpg');
+INSERT INTO `storage` VALUES (6, 202001006, '实木小圆桌', 1, 254, 100,'2020-08-01','6.jpg');
+INSERT INTO `storage` VALUES (7, 202001007, '中式书法桌', 1, 188, 100,'2020-05-01','7.jpg');
+INSERT INTO `storage` VALUES (8, 202001008, '可折叠小桌', 1, 22.8, 500,'2020-09-01','8.jpg');
+INSERT INTO `storage` VALUES (9, 202002001, '舒适电脑椅', 2, 138, 500,'2021-02-01','9.jpg');
+INSERT INTO `storage` VALUES (10, 202102002, '餐桌椅', 2, 89, 500,'2021-02-01','10.jpg');
+INSERT INTO `storage` VALUES (11, 202102003, '北欧沙发椅', 2, 470, 200,'2021-03-01','11.jpg');
+INSERT INTO `storage` VALUES (12, 202102004, 'PP塑料椅', 2, 89, 500,'2021-03-01','12.jpg');
+INSERT INTO `storage` VALUES (13, 202102005, '北欧实木餐椅', 2, 449, 300,'2021-03-01','13.jpg');
+INSERT INTO `storage` VALUES (14, 202102006, '原木板凳', 2, 38.8, 500,'2021-04-01','14.jpg');
+INSERT INTO `storage` VALUES (15, 202102007, '家用坐墩', 2, 22.9, 500,'2021-04-01','15.jpg');
+INSERT INTO `storage` VALUES (16, 202103001, '乳胶布艺沙发', 3, 2360, 200,'2021-05-01','16.jpg');
+INSERT INTO `storage` VALUES (17, 202103002, '北欧简约沙发', 3, 2280, 200,'2021-05-01','17.jpg');
+INSERT INTO `storage` VALUES (18, 202103003, '真皮沙发', 3, 3280, 200,'2021-05-01','18.jpg');
+INSERT INTO `storage` VALUES (19, 202103004, '轻奢圆弧沙发', 3, 12152, 200,'2021-06-01','19.jpg');
+INSERT INTO `storage` VALUES (20, 202103005, '全实木沙发', 3, 4498, 200,'2021-06-01','20.jpg');
+INSERT INTO `storage` VALUES (21, 202104001, '卧室衣柜', 4, 2680, 500,'2021-06-01','21.jpg');
+INSERT INTO `storage` VALUES (22, 202104002, '家用储物柜', 4, 3978, 300,'2021-06-20','22.jpg');
+INSERT INTO `storage` VALUES (23, 202104003, '推拉门鞋柜', 4, 270.3, 800,'2021-06-20','23.jpg');
+INSERT INTO `storage` VALUES (24, 202104004, '轻奢卧室床头柜', 4, 648, 200,'2021-07-01','24.jpg');
+INSERT INTO `storage` VALUES (25, 202104005, '简约实木书柜', 4, 3000, 300,'2021-07-01','25.jpg');
+
+-- ----------------------------
+-- Table structure for orders
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders`  (
+  `orderid` int(10)  NOT NULL AUTO_INCREMENT,
+  `orderdate` DATE NOT NULL,
+  `finishdate` DATE DEFAULT NULL,
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`orderid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of orders
+-- ----------------------------
+INSERT INTO `orders` VALUES (1, '2021-12-27', '2021-12-30', 1);
+INSERT INTO `orders` VALUES (2, '2021-12-27', '2021-12-27', 2);
+INSERT INTO `orders` VALUES (3, '2021-12-31', '2022-01-02', 3);
+-- ---------------------------------
+-- Table structure for orderinfo
+-- ---------------------------------
+DROP TABLE IF EXISTS `orderinfo`;
+CREATE TABLE `orderinfo`  (
+  `serialid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `orderid` int(10)  NOT NULL ,
+  `productid` varchar(20) NOT NULL,
+  `ordernumber` int(10) NOT NULL,
+  `price` float(10, 2) NOT NULL,
+  `total` float(255, 0) DEFAULT NULL,
+  PRIMARY KEY (`serialid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of orderinfo
+-- ----------------------------
+INSERT INTO `orderinfo` VALUES (1, 1, '202001002', 10,43, 430);
+INSERT INTO `orderinfo` VALUES (2, 1,'202001003',1, 1880,1880);
+INSERT INTO `orderinfo` VALUES (3, 2,'202001003',1, 1880,1880);
+INSERT INTO `orderinfo` VALUES (4, 2,'202001004',1, 1125,1125);
+INSERT INTO `orderinfo` VALUES (5, 3,'202001004',1, 1125,1125);
+ 
+-- ----------------------------
+-- Table structure for usercart
+-- ----------------------------
+DROP TABLE IF EXISTS `usercart`;
+CREATE TABLE `usercart`  (
+  `userid` int(11) NOT NULL,
+  `orderid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`, `orderid`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+-- ----------------------------
+-- Table structure for sale
+-- ----------------------------
+DROP TABLE IF EXISTS `sale`;
+CREATE TABLE `sale`  (
+  `saleid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `casherid` varchar(20) NOT NULL,
+  `total` float(255,2) NOT NULL,
+  `totalnumber` int(11) DEFAULT NULL,
+  `userid` int (10) NOT NULL,
+  `discount` float(10,2) NOT NULL,
+  `actualtotal` float(255,2) NOT NULL,
+  `saledate` date NOT NULL,
+  PRIMARY KEY (`saleid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+INSERT INTO `sale` VALUES(1,'001',10703,17,1,0,10370,'2021-12-31');
+INSERT INTO `sale` VALUES(2,'002',11305,4,2,0.75,8478.75,'2021-12-31');
+ 
+-- ------------------------------
+-- Table structure for saleinfo
+-- ------------------------------
+DROP TABLE IF EXISTS `saleinfo`;
+CREATE TABLE `saleinfo`  (
+  `saleserialid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `saleid` int(10) NOT NULL,
+  `productid` varchar(11) NOT NULL,
+  `number` int(11) DEFAULT NULL,
+  `price` float(10,2) NOT NULL,
+  `total` float(255,2) NOT NULL,
+  PRIMARY KEY (`saleserialid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+INSERT INTO  `saleinfo` VALUES(1,1,'202001002',12,43,516);
+INSERT INTO  `saleinfo` VALUES(2,1,'202001003',2,1880,3760);
+INSERT INTO  `saleinfo` VALUES(3,1,'202102004',1,89,89);
+INSERT INTO  `saleinfo` VALUES(4,1,'202103001',1,2360,2360);
+INSERT INTO  `saleinfo` VALUES(5,1,'202104002',1,3978,3978);
+INSERT INTO  `saleinfo` VALUES(6,2,'202001001',1,10709,10709);
+INSERT INTO  `saleinfo` VALUES(7,2,'202001002',2,43,86);
+INSERT INTO  `saleinfo` VALUES(8,2,'202001005',1,510,510);
+
+-- ----------------------------
+-- View structure for order_view
+-- ----------------------------
+DROP VIEW IF EXISTS `order_view`;
+CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` 
+SQL SECURITY DEFINER VIEW `order_view` AS 
+select `orders`.`orderid` AS `orderid`,
+`orders`.`orderdate` AS `orderdate`,
+`orders`.`finishdate` AS `finishdate`,
+`orders`.`userid` AS `userid`,
+`orderinfo`.`productid` AS `productid`,
+`orderinfo`.`ordernumber` AS `ordernumber`,
+`orderinfo`.`price` AS `price`,
+`orderinfo`.`total` AS `total`
+from `orders`,`orderinfo`
+WHERE orders.orderid=orderinfo.orderid;
+
+-- ----------------------------
+-- Procedure structure for sale_rank
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sale_rank`;
+delimiter ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sale_rank`(in r_year int,in r_month int)
+begin
+	select productname as '产品名',sum(saleinfo.number) as '总数'
+	from saleinfo,storage,sale
+	where (saleinfo.productid=storage.productid) and (sale.saleid=saleinfo.saleid) and (r_year=YEAR(sale.saledate)) 
+	and (r_month=MONTH(sale.saledate))
+	group by productname
+	order by sum(saleinfo.number) desc;									
+end
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for sale_total_rank
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sale_total_rank`;
+delimiter ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sale_total_rank`()
+begin
+	select productname as '产品名',sum(saleinfo.number) as '总数'
+	from storage,saleinfo
+	where storage.productid=saleinfo.productid
+	group by productname
+	order by sum(saleinfo.number) desc;
+end
+;;
+delimiter ;
+
+

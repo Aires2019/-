@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+div#head
+{
+    margin: 0 0 0 0;
+    height: 80px;
+    background-color: #3B5998;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+div#menu
+{
+    width: 175px;
+    height: 100%;
+    float:left;
+    background-color: white;
+    
+}
+div#menu a
+{
+    font-size: 15px;
+	display:inline-block;
+    height: 40px;
+    width: 165px;
+    line-height: 60px;
+    padding: 0 0 0 0;
+    text-align: center;
+    color: #08c;
+    text-decoration: none;
+    border:1px solid #c0bcbc;
+}
+div#menu a:hover
+{
+    background-color: rgb(214, 212, 212);
+    color: black;
+}
+div#menu label
+{
+	font-size: 15px;
+	color: #08c;
+	height: 60px;
+	width: 100px;
+	line-height: 80px;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+div#head a
+{
+	font-size: 20px;
+	display:inline-block;
+    height: 80px;
+    width: 160px;
+    line-height: 80px;
+    padding: 0 0 0 0;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+div#head a:hover
+{
+    background-color: white;
+    color: black;
+
+}
+div#head a#one
+{
+    margin-left: 50px;
+}
+div#head label
+{
+	font-size: 20px;
+	color: white;
+	height: 80px;
+	width: 100px;
+	line-height: 80px;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+div#menu input
+{
+	width: 120px;
+	height: 20px;
+}
+div#menu button
+{
+	width: 100px;
+	height: 30px;
+}

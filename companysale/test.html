@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js select选中显示不同表单内容 </title>
+<link type="text/css" rel="stylesheet" href="css/text.css">
+</head>
+
+<script type="text/javascript">
+function test(Names){
+    var Name;
+    for (var i=1;i<4;i++){    //  更改数字4可以改变选择的内容数量，在下拉总数值的基础上+1.比如：下拉菜单有5个值，则4变成6
+        var tempname="mune_x"+i                                                                            
+        var NewsHot="x"+i    //  “X”是ID名称，比如：ID命名为“case1”，这里的“X”即为“case”
+        if (Names==tempname){
+            Nnews=document.getElementById(NewsHot)
+            Nnews.style.display='';
+        }else{
+            Nnews=document.getElementById(NewsHot)
+            Nnews.style.display='none';   
+        }
+    }
+}
+</script>
+
+<body>
+
+<fieldset class="cont">
+        
+    <div class="list">
+        <label>请选择仓库：</label>
+        <select size="1" name="D1" onChange="javascript:test('mune_x'+this.value)">  
+            <option value="1">仓库1</option> 
+            <option value="2">仓库2</option> 
+            <option value="3">仓库3</option>
+        </select> 
+    </div>
+        
+    <!-------------------------------选择密保手机-------------------------------------->
+    <div class="list" id="x1">
+        <label>仓库1：</label>
+        数量：100
+    </div>
+        
+    <!-------------------------------选择密保邮箱-------------------------------------->
+    <div class="list" id="x2" style="display:none">
+        <label>仓库2：</label>
+        数量：200
+    </div>
+        
+    <!-------------------------------选择密保问题-------------------------------------->
+    <div class="fl" id="x3" style="display:none">
+      <label>仓库3：</label>
+      数量：300
+    </div>
+    
+</fieldset>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+</div>
+</body>
+</html>
